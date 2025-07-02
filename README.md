@@ -1,26 +1,22 @@
-Sure! Here’s your full content reformatted as a professional, technical `README.md` file for the **TradeRow** project:
-
----
-
 # TradeRow - Decentralized Trading Application on NERO Chain
 
 ## Overview
 
-**TradeRow** is a TypeScript-based React application designed for decentralized finance (DeFi) and SocialFi experiences, built natively on the **NERO Chain** blockchain. This build (as of **09:05 PM WAT, July 02, 2025**) features a simulated trading UI, gas payment abstraction (Types 0, 1, 2), and a social trading feed. The architecture prioritizes Web3-native onboarding, animated user interactions, and modular extensibility—supporting future integrations like **Hyperlane** (cross-chain) and **Datai Network** (analytics). Built with `ethers` v6, the project ensures modern Web3 compatibility and developer-friendly tooling.
+**TradeRow** is a TypeScript-based React application designed for decentralized finance (DeFi) and SocialFi experiences, built natively on the **NERO Chain** blockchain. This build features a simulated trading UI, gas payment abstraction (Types 0, 1, 2), and a social trading feed. The architecture prioritizes Web3-native onboarding, animated user interactions, and modular extensibility—supporting future integrations like **Hyperlane** (cross-chain) and **Datai Network** (analytics). Built with `ethers` v6, the project ensures modern Web3 compatibility and developer-friendly tooling.
 
 ---
 
-## ✨ Features
+##  Features
 
-* 🔄 **Swap Interface**: Aggregates mock token swaps via a modular React engine with animated UI.
-* 👥 **SocialFi Feed**: Simulates trade-based social engagement with mock user data.
-* 🦊 **Wallet Integration**: EOA connectivity via `ethers` v6 and MetaMask’s `BrowserProvider`.
-* 💸 **Gas Payment Selector**: Offers Type 0 (gasless), Type 1 (subsidized), and Type 2 (premium) modes.
-* 🎨 **UI Animations**: Uses Framer Motion and Tailwind CSS for smooth, responsive interfaces.
+*  **Swap Interface**: Aggregates mock token swaps via a modular React engine with animated UI.
+*  **SocialFi Feed**: Simulates trade-based social engagement with mock user data.
+*  **Wallet Integration**: EOA connectivity via `ethers` v6 and MetaMask’s `BrowserProvider`.
+*  **Gas Payment Selector**: Offers Type 0 (gasless), Type 1 (subsidized), and Type 2 (premium) modes.
+*  **UI Animations**: Uses Framer Motion and Tailwind CSS for smooth, responsive interfaces.
 
 ---
 
-## 🧩 Problem It Solves
+## Problem It Solves
 
 * Lowers the barrier to DeFi by offering abstracted gas fee types via NERO Paymaster.
 * Fosters collaborative trading through social feed-style engagement.
@@ -29,7 +25,7 @@ Sure! Here’s your full content reformatted as a professional, technical `READM
 
 ---
 
-## 🛠️ Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -42,7 +38,7 @@ Sure! Here’s your full content reformatted as a professional, technical `READM
 ### Installation
 
 ```bash
-git clone https://github.com/your-username/traderow.git
+git clone https://github.com/valortin/traderow.git
 cd traderow
 npm install
 ```
@@ -89,7 +85,7 @@ npm run type-check
 
 ---
 
-## 🏗️ Project Architecture
+## Project Architecture
 
 ```
 traderow/
@@ -116,7 +112,7 @@ traderow/
 
 ---
 
-## ⚙️ Technologies Used
+## Technologies Used
 
 | Area        | Tech Stack                                     |
 | ----------- | ---------------------------------------------- |
@@ -129,7 +125,7 @@ traderow/
 
 ---
 
-## 🧱 Build & Integration
+## Build & Integration
 
 1. **Scaffold**: Bootstrapped via CRA TypeScript template.
 2. **UI**: Designed with Tailwind + Framer Motion (`whileHover`, `whileTap`, etc.).
@@ -140,17 +136,17 @@ traderow/
 
 ---
 
-## 🐞 Challenges Faced
+## Challenges Faced
 
-* 🧩 TypeScript DOM types for `ethereum`: Resolved with `declare global`.
-* 🔄 ethers v6 migration: Updated import paths and providers.
-* 🔐 Web3Auth bugs: Temporary rollback to MetaMask-only mode.
-* 🎞️ Animation lag: Tuned Framer Motion transitions for 60 FPS.
-* 🌐 RPC latency: Added fallback NERO RPC endpoints.
+*  TypeScript DOM types for `ethereum`: Resolved with `declare global`.
+*  ethers v6 migration: Updated import paths and providers.
+*  Web3Auth bugs: Temporary rollback to MetaMask-only mode.
+*  Animation lag: Tuned Framer Motion transitions for 60 FPS.
+*  RPC latency: Added fallback NERO RPC endpoints.
 
 ---
 
-## 📘 Lessons Learned
+## Lessons Learned
 
 * Strong typing (e.g., interfaces for `SwapQuote`, `Token`) improved runtime stability.
 * ethers v6 offers robust AA compatibility aligned with future NERO tooling.
@@ -160,7 +156,7 @@ traderow/
 
 ---
 
-## 🔌 Integration Details
+## Integration Details
 
 | Integration     | Status         | Notes                                           |
 | --------------- | -------------- | ----------------------------------------------- |
@@ -171,16 +167,16 @@ traderow/
 
 ---
 
-## 🚀 Roadmap
+## Roadmap
 
-### 🌊 Wave 1: Ecosystem Deepening (Q3–Q4 2025)
+### Ecosystem Deepening
 
 * ✅ WalletConnect, gas selection UX
 * 🔜 Cross-chain swap with Hyperlane
 * 🔜 Leaderboard: Samurai NFT gamification
 * 🔜 AI integration (Datai)
 
-### 🌊 Wave 2: Scaling & Governance (Q1–Q2 2026)
+### Scaling & Governance 
 
 * 🔜 React Native app
 * 🔜 NFT loan & Paymaster-based fee logic
@@ -189,7 +185,7 @@ traderow/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork & branch:
    `git checkout -b feature/your-feature`
@@ -202,7 +198,7 @@ traderow/
 
 ---
 
-## 🧪 Testing
+##  Testing
 
 * ✅ **Type Check**: `npm run type-check`
 * 🔬 **Unit Tests**: (planned) via Jest & React Testing Library
@@ -216,19 +212,3 @@ traderow/
 MIT — See [`LICENSE.md`](LICENSE.md)
 
 ---
-
-## 🙌 Acknowledgments
-
-* **NERO Chain Team** – For enabling testnet and developer tooling
-* **Open Source Contributors** – React, ethers.js, Tailwind, Framer Motion
-* **Design Contributors** – Original logo and UI visuals
-
----
-
-## 📬 Contact
-
-For support or questions, reach out via [your-email@example.com](mailto:your-email@example.com) or connect with the NERO Chain developer community on [X](https://x.com/).
-
----
-
-Would you like a GitHub Actions CI template, contributor badges, or deployment instructions added next?
