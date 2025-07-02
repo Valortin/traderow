@@ -207,7 +207,7 @@ traderow/
 
 ---
 
-## 📜 License
+## License
 
 MIT — See [`LICENSE.md`](LICENSE.md)
 
