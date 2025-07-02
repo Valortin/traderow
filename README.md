@@ -1,46 +1,234 @@
-# Getting Started with Create React App
+Sure! Here’s your full content reformatted as a professional, technical `README.md` file for the **TradeRow** project:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+# TradeRow - Decentralized Trading Application on NERO Chain
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+**TradeRow** is a TypeScript-based React application designed for decentralized finance (DeFi) and SocialFi experiences, built natively on the **NERO Chain** blockchain. This build (as of **09:05 PM WAT, July 02, 2025**) features a simulated trading UI, gas payment abstraction (Types 0, 1, 2), and a social trading feed. The architecture prioritizes Web3-native onboarding, animated user interactions, and modular extensibility—supporting future integrations like **Hyperlane** (cross-chain) and **Datai Network** (analytics). Built with `ethers` v6, the project ensures modern Web3 compatibility and developer-friendly tooling.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## ✨ Features
 
-### `npm test`
+* 🔄 **Swap Interface**: Aggregates mock token swaps via a modular React engine with animated UI.
+* 👥 **SocialFi Feed**: Simulates trade-based social engagement with mock user data.
+* 🦊 **Wallet Integration**: EOA connectivity via `ethers` v6 and MetaMask’s `BrowserProvider`.
+* 💸 **Gas Payment Selector**: Offers Type 0 (gasless), Type 1 (subsidized), and Type 2 (premium) modes.
+* 🎨 **UI Animations**: Uses Framer Motion and Tailwind CSS for smooth, responsive interfaces.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 🧩 Problem It Solves
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Lowers the barrier to DeFi by offering abstracted gas fee types via NERO Paymaster.
+* Fosters collaborative trading through social feed-style engagement.
+* Simplifies user onboarding with modal flows and mock analytics.
+* Prepares the foundation for cross-chain, data-driven trading on NERO.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Getting Started
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Node.js `v18.x+`
+* npm `v9.x+`
+* Git `v2.34+`
+* MetaMask extension
+* TypeScript-supporting IDE (e.g., VS Code `v1.85+`)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+git clone https://github.com/your-username/traderow.git
+cd traderow
+npm install
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### Configuration
 
-## Learn More
+Create `src/utils/config.ts`:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```ts
+export const CONFIG = {
+  rpcUrl: 'https://rpc-testnet.nerochain.io',
+  chainId: '0x2B1', // NERO Testnet
+  gasLimit: 3000000,
+};
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Optional: In `WalletConnect.tsx`, initialize Web3Auth:
+
+```ts
+const web3auth = new Web3Auth({ clientId: 'YOUR_WEB3AUTH_CLIENT_ID', ... });
+```
+
+### Development
+
+```bash
+npm start
+```
+
+Visit: [http://localhost:3000](http://localhost:3000)
+
+### Production
+
+```bash
+npm run build
+```
+
+Build is output to `build/` with optimized assets.
+
+### Type Check
+
+```bash
+npm run type-check
+```
+
+---
+
+## 🏗️ Project Architecture
+
+```
+traderow/
+├── src/
+│   ├── components/
+│   │   ├── WalletConnect.tsx
+│   │   ├── SwapInterface.tsx
+│   │   ├── SocialFeed.tsx
+│   │   ├── PaymentSelector.tsx
+│   │   └── OnboardingModal.tsx
+│   ├── utils/
+│   │   ├── mockData.ts
+│   │   ├── types.ts
+│   │   └── config.ts
+│   ├── App.tsx
+│   ├── index.tsx
+│   └── index.css
+├── public/
+├── tailwind.config.js
+├── tsconfig.json
+├── package.json
+└── README.md
+```
+
+---
+
+## ⚙️ Technologies Used
+
+| Area        | Tech Stack                                     |
+| ----------- | ---------------------------------------------- |
+| Frontend    | React `v18.2.0`, TypeScript `v5.1.6`           |
+| Styling     | Tailwind CSS `v3.4.4`, Framer Motion `v11.3.8` |
+| Web3        | `ethers.js` `v6.13.2`, MetaMask                |
+| Utilities   | `react-toastify` `v10.0.5`, Web3Auth (opt)     |
+| Blockchain  | NERO Chain RPC (Testnet)                       |
+| Build Tools | `react-scripts` `v5.0.1`                       |
+
+---
+
+## 🧱 Build & Integration
+
+1. **Scaffold**: Bootstrapped via CRA TypeScript template.
+2. **UI**: Designed with Tailwind + Framer Motion (`whileHover`, `whileTap`, etc.).
+3. **Web3 Setup**: Used `ethers` v6 `BrowserProvider` for EOA, integrated with MetaMask.
+4. **Data Mocking**: Simulated token/quote datasets via `mockData.ts`.
+5. **Paymaster/Hyperlane**: Placeholders integrated; API connection pending.
+6. **Optimized Build**: `npm run build` with sourcemaps disabled (`GENERATE_SOURCEMAP=false`).
+
+---
+
+## 🐞 Challenges Faced
+
+* 🧩 TypeScript DOM types for `ethereum`: Resolved with `declare global`.
+* 🔄 ethers v6 migration: Updated import paths and providers.
+* 🔐 Web3Auth bugs: Temporary rollback to MetaMask-only mode.
+* 🎞️ Animation lag: Tuned Framer Motion transitions for 60 FPS.
+* 🌐 RPC latency: Added fallback NERO RPC endpoints.
+
+---
+
+## 📘 Lessons Learned
+
+* Strong typing (e.g., interfaces for `SwapQuote`, `Token`) improved runtime stability.
+* ethers v6 offers robust AA compatibility aligned with future NERO tooling.
+* Build performance matters: asset optimization directly affects UX.
+* NERO’s modularity demands layered architecture—RPC, Paymaster, analytics APIs.
+* Visual trust via design (hand-drawn assets) boosts adoption potential.
+
+---
+
+## 🔌 Integration Details
+
+| Integration     | Status         | Notes                                           |
+| --------------- | -------------- | ----------------------------------------------- |
+| NERO RPC        | ✅ Active       | Configurable via `config.ts`                    |
+| Paymaster (0–2) | 🟡 Placeholder | Awaiting full API from NERO SDK                 |
+| Hyperlane       | 🔜 Planned     | For cross-chain swaps using NERO's 130+ bridges |
+| Datai Network   | 🔜 Planned     | For AI-powered Type 2 trade insights            |
+
+---
+
+## 🚀 Roadmap
+
+### 🌊 Wave 1: Ecosystem Deepening (Q3–Q4 2025)
+
+* ✅ WalletConnect, gas selection UX
+* 🔜 Cross-chain swap with Hyperlane
+* 🔜 Leaderboard: Samurai NFT gamification
+* 🔜 AI integration (Datai)
+
+### 🌊 Wave 2: Scaling & Governance (Q1–Q2 2026)
+
+* 🔜 React Native app
+* 🔜 NFT loan & Paymaster-based fee logic
+* 🔜 Microtip via \$TOKEN + bundling
+* 🔜 Eco-dashboard (NERO green API)
+
+---
+
+## 🤝 Contributing
+
+1. Fork & branch:
+   `git checkout -b feature/your-feature`
+2. Install & check:
+   `npm install && npm run type-check`
+3. Commit conventionally:
+   `git commit -m "feat: your feature"`
+4. Open a PR after `git push`
+5. Ensure CI and tests pass.
+
+---
+
+## 🧪 Testing
+
+* ✅ **Type Check**: `npm run type-check`
+* 🔬 **Unit Tests**: (planned) via Jest & React Testing Library
+* ⚙️ **Integration**: MetaMask simulations in browser
+* 📊 **Performance**: Lighthouse audit post-build
+
+---
+
+## 📜 License
+
+MIT — See [`LICENSE.md`](LICENSE.md)
+
+---
+
+## 🙌 Acknowledgments
+
+* **NERO Chain Team** – For enabling testnet and developer tooling
+* **Open Source Contributors** – React, ethers.js, Tailwind, Framer Motion
+* **Design Contributors** – Original logo and UI visuals
+
+---
+
+## 📬 Contact
+
+For support or questions, reach out via [your-email@example.com](mailto:your-email@example.com) or connect with the NERO Chain developer community on [X](https://x.com/).
+
+---
+
+Would you like a GitHub Actions CI template, contributor badges, or deployment instructions added next?

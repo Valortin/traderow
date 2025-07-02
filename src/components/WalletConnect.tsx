@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserProvider } from 'ethers'; // Use BrowserProvider from ethers v6
+import { BrowserProvider } from 'ethers'; 
 import { toast } from 'react-toastify';
 import { motion } from 'framer-motion';
 
